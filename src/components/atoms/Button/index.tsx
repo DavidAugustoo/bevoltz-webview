@@ -6,7 +6,7 @@ import { ButtonContainer, IconContainer } from './styles'
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   content: string
-  variant: 'primary' | 'secondary' | 'google'
+  variant: 'primary' | 'secondary' | 'charge'
   full?: boolean
   icon?: React.ReactElement<any, string | React.JSXElementConstructor<any>>
 }

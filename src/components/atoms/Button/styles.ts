@@ -49,12 +49,13 @@ export const ButtonContainer = styled('button')<ButtonProps>`
       }
     `}
 
-    ${variant == 'google' &&
+    ${variant == 'charge' &&
     css`
       background-color: ${theme.colors.green_100};
+      padding: 8px 12px;
 
       ${IconContainer}, p {
-        color: ${theme.colors.green_300};
+        color: ${theme.colors.white};
       }
 
       &:hover {
