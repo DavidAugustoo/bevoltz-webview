@@ -14,7 +14,7 @@ export function NavbarItem({ icon, href, activePath }: INavbarItem) {
   return (
     <Link href={href} passHref>
       <span>
-        {React.cloneElement(icon, { size: '20', color: statusColor })}
+        {React.cloneElement(icon, { size: '28', color: statusColor })}
       </span>
     </Link>
   )
