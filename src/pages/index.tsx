@@ -26,8 +26,7 @@ export default function Home() {
           full={true}
           onClick={() =>
             signIn('google', {
-              callbackUrl:
-                'https://9ea8-2804-14c-1ad-280f-b019-4286-1f17-8b3c.ngrok-free.app/home',
+              callbackUrl: '/home',
             })
           }
         />
