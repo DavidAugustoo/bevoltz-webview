@@ -9,5 +9,6 @@ export default NextAuth({
     }),
     // Você pode adicionar mais provedores conforme necessário
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   // Adicione aqui as configurações de callback, session, etc., conforme necessário
 })
