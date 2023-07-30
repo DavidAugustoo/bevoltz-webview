@@ -6,11 +6,11 @@ import { SocialButton } from '@components/atoms/SocialButton'
 import { Text } from '@components/atoms/Text'
 
 import beVoltzLogo from '@assets/bevoltz-logo.svg'
-import { ButtonArea, HomeContainer } from '@styles/pages/Home/stylets'
+import { ButtonArea, LoginContainer } from '@styles/pages/Login/stylets'
 
 export default function Home() {
   return (
-    <HomeContainer className="container-content">
+    <LoginContainer className="container-content">
       <Image src={beVoltzLogo} alt="oi" />
       <Text
         content="Conectando motoristas e estações de carregamento em uma rede global unificada."
@@ -32,6 +32,6 @@ export default function Home() {
         />
         <Button content="CONTINUAR COM EMAIL" variant="secondary" full={true} />
       </ButtonArea>
-    </HomeContainer>
+    </LoginContainer>
   )
 }

@@ -1,20 +1,18 @@
 import { useSession } from 'next-auth/react'
-import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React from 'react'
 
-const Home: React.FC = () => {
-  const { data: session } = useSession()
+import { Map } from '@components/atoms/Map'
 
-  if (!session) {
-    return <p>Loading...</p>
-  }
+import { HomeContainer } from '@styles/pages/Home/styles'
+import { DefaultLayout } from 'src/Layout/DefaultLayout'
 
+export default function Home() {
   return (
-    <div>
-      <p>Olá, {session.user?.name}!</p>
-      <p>Email: {session.user?.email}</p>
-      <img src={session.user?.image || ''} alt="Imagem do perfil" />
-    </div>
+    <DefaultLayout>
+      <HomeContainer>
+        <Map />
+      </HomeContainer>
+    </DefaultLayout>
   )
 }
-
-export default Home
