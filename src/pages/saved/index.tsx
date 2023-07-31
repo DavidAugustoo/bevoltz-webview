@@ -36,10 +36,10 @@ export default function Saved() {
             <Text
               content="1.8 km de distância"
               color="black"
-              size="xxsmall"
+              size="xxxsmall"
               weight="semiBold"
             />
-            <Button content="Carregar" variant="charge" />
+            <Button content="Carregar" variant="charge" charge />
           </SavedStationItem>
           <SavedStationItem>
             <Text
@@ -57,10 +57,10 @@ export default function Saved() {
             <Text
               content="3.8 km de distância"
               color="black"
-              size="xxsmall"
+              size="xxxsmall"
               weight="semiBold"
             />
-            <Button content="Carregar" variant="charge" />
+            <Button content="Carregar" variant="charge" charge />
           </SavedStationItem>
           <SavedStationItem>
             <Text
@@ -78,10 +78,10 @@ export default function Saved() {
             <Text
               content="5.8 km de distância"
               color="black"
-              size="xxsmall"
+              size="xxxsmall"
               weight="semiBold"
             />
-            <Button content="Carregar" variant="charge" />
+            <Button content="Carregar" variant="charge" charge />
           </SavedStationItem>
           <SavedStationItem>
             <Text
@@ -99,11 +99,11 @@ export default function Saved() {
             <Text
               content="13.8 km de distância"
               color="black"
-              size="xxsmall"
+              size="xxxsmall"
               weight="semiBold"
             />
 
-            <Button content="Carregar" variant="charge" full={true} />
+            <Button content="Carregar" variant="charge" full={true} charge />
           </SavedStationItem>
         </SavedStationList>
       </SavedContainer>

@@ -58,7 +58,7 @@ export default function Charges() {
             </ChargeDetail>
 
             <ChargeValueBox>
-              <Button content="Repetir Recarga" variant="charge" />
+              <Button content="Repetir Recarga" variant="charge" charge />
               <ChargeValueArea>
                 <Text
                   content="R$ 54,93"
@@ -103,7 +103,17 @@ export default function Charges() {
                 weight="semiBold"
               />
             </ChargeDetail>
-            <Button content="Carregar" variant="charge" />
+            <ChargeValueBox>
+              <Button content="Repetir Recarga" variant="charge" charge />
+              <ChargeValueArea>
+                <Text
+                  content="R$ 72,13"
+                  color="black"
+                  size="small"
+                  weight="bold"
+                />
+              </ChargeValueArea>
+            </ChargeValueBox>
           </ChargesStationItem>
           <ChargesStationItem>
             <Text
@@ -138,7 +148,17 @@ export default function Charges() {
                 weight="semiBold"
               />
             </ChargeDetail>
-            <Button content="Carregar" variant="charge" />
+            <ChargeValueBox>
+              <Button content="Repetir Recarga" variant="charge" charge />
+              <ChargeValueArea>
+                <Text
+                  content="R$ 124,28"
+                  color="black"
+                  size="small"
+                  weight="bold"
+                />
+              </ChargeValueArea>
+            </ChargeValueBox>
           </ChargesStationItem>
           <ChargesStationItem>
             <Text
@@ -173,7 +193,17 @@ export default function Charges() {
                 weight="semiBold"
               />
             </ChargeDetail>
-            <Button content="Carregar" variant="charge" full={true} />
+            <ChargeValueBox>
+              <Button content="Repetir Recarga" variant="charge" charge />
+              <ChargeValueArea>
+                <Text
+                  content="R$ 43,83"
+                  color="black"
+                  size="small"
+                  weight="bold"
+                />
+              </ChargeValueArea>
+            </ChargeValueBox>
           </ChargesStationItem>
         </ChargesStationList>
       </ChargesContainer>

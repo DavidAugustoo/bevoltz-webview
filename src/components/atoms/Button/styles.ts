@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import styled from 'styled-components'
 import { css } from 'styled-components'
 
@@ -7,6 +9,11 @@ export const IconContainer = styled('div')`
   display: flex;
   align-items: center;
   margin-top: 2px;
+`
+
+export const RayIcon = styled(Image)`
+  width: 10px;
+  height: 20px;
 `
 
 export const ButtonContainer = styled('button')<ButtonProps>`
