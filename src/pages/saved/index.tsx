@@ -22,19 +22,19 @@ export default function Saved() {
         <SavedStationList>
           <SavedStationItem>
             <Text
-              content="Shopping Pátio Lins"
+              content="Ester Star"
               color="gray_200"
               size="small"
               weight="semiBold"
             />
             <Text
-              content="Av. Higienópolis, 618"
+              content="Av. Lacerda Franco"
               color="gray_100"
               size="xsmall"
               weight="semiBold"
             />
             <Text
-              content="7.8 km de distância"
+              content="1.8 km de distância"
               color="black"
               size="xxsmall"
               weight="semiBold"
@@ -43,19 +43,19 @@ export default function Saved() {
           </SavedStationItem>
           <SavedStationItem>
             <Text
-              content="Shopping Pátio Lins"
+              content="Beco do Cambuci"
               color="gray_200"
               size="small"
               weight="semiBold"
             />
             <Text
-              content="Av. Higienópolis, 618"
+              content="Rua Simão Dias, 72"
               color="gray_100"
               size="xsmall"
               weight="semiBold"
             />
             <Text
-              content="7.8 km de distância"
+              content="3.8 km de distância"
               color="black"
               size="xxsmall"
               weight="semiBold"
@@ -64,19 +64,19 @@ export default function Saved() {
           </SavedStationItem>
           <SavedStationItem>
             <Text
-              content="Shopping Pátio Lins"
+              content="Esfiharia Dubai Lins"
               color="gray_200"
               size="small"
               weight="semiBold"
             />
             <Text
-              content="Av. Higienópolis, 618"
+              content="Av. Lins de Vasconcelos, 1147"
               color="gray_100"
               size="xsmall"
               weight="semiBold"
             />
             <Text
-              content="7.8 km de distância"
+              content="5.8 km de distância"
               color="black"
               size="xxsmall"
               weight="semiBold"
@@ -85,7 +85,7 @@ export default function Saved() {
           </SavedStationItem>
           <SavedStationItem>
             <Text
-              content="Shopping Pátio Lins"
+              content="Shopping Pátio Higienópolis"
               color="gray_200"
               size="small"
               weight="semiBold"
@@ -97,7 +97,7 @@ export default function Saved() {
               weight="semiBold"
             />
             <Text
-              content="7.8 km de distância"
+              content="13.8 km de distância"
               color="black"
               size="xxsmall"
               weight="semiBold"
