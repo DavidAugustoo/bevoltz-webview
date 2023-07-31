@@ -2,25 +2,28 @@ import { Button } from '@components/atoms/Button'
 import { Text } from '@components/atoms/Text'
 
 import {
-  SavedContainer,
-  SavedStationItem,
-  SavedStationList,
-} from '@styles/pages/Saved/styles'
+  ChargeDetail,
+  ChargeValueArea,
+  ChargeValueBox,
+  ChargesContainer,
+  ChargesStationItem,
+  ChargesStationList,
+} from '@styles/pages/Charge/styles'
 import { DefaultLayout } from 'src/Layout/DefaultLayout'
 
 export default function Charges() {
   return (
     <DefaultLayout>
-      <SavedContainer className="container-content">
+      <ChargesContainer className="container-content">
         <Text
-          content="Estações Favoritadas"
+          content="Recargas Realizadas"
           color="gray_200"
           size="medium"
           weight="semiBold"
         />
 
-        <SavedStationList>
-          <SavedStationItem>
+        <ChargesStationList>
+          <ChargesStationItem>
             <Text
               content="Ester Star"
               color="gray_200"
@@ -33,15 +36,41 @@ export default function Charges() {
               size="xsmall"
               weight="semiBold"
             />
-            <Text
-              content="1.8 km de distância"
-              color="black"
-              size="xxsmall"
-              weight="semiBold"
-            />
-            <Button content="Carregar" variant="charge" />
-          </SavedStationItem>
-          <SavedStationItem>
+            <ChargeDetail>
+              <Text
+                content="Duração: 1 hora e 30 minutos"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Data: 10/06/2023"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Veículo: HWT-0858"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+            </ChargeDetail>
+
+            <ChargeValueBox>
+              <Button content="Repetir Recarga" variant="charge" />
+              <ChargeValueArea>
+                <Text
+                  content="R$ 54,93"
+                  color="black"
+                  size="small"
+                  weight="bold"
+                />
+              </ChargeValueArea>
+            </ChargeValueBox>
+          </ChargesStationItem>
+
+          <ChargesStationItem>
             <Text
               content="Beco do Cambuci"
               color="gray_200"
@@ -54,15 +83,29 @@ export default function Charges() {
               size="xsmall"
               weight="semiBold"
             />
-            <Text
-              content="3.8 km de distância"
-              color="black"
-              size="xxsmall"
-              weight="semiBold"
-            />
+            <ChargeDetail>
+              <Text
+                content="Duração: 1 hora e 30 minutos"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Data: 10/06/2023"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Veículo: HWT-0858"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+            </ChargeDetail>
             <Button content="Carregar" variant="charge" />
-          </SavedStationItem>
-          <SavedStationItem>
+          </ChargesStationItem>
+          <ChargesStationItem>
             <Text
               content="Esfiharia Dubai Lins"
               color="gray_200"
@@ -75,15 +118,29 @@ export default function Charges() {
               size="xsmall"
               weight="semiBold"
             />
-            <Text
-              content="5.8 km de distância"
-              color="black"
-              size="xxsmall"
-              weight="semiBold"
-            />
+            <ChargeDetail>
+              <Text
+                content="Duração: 1 hora e 30 minutos"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Data: 10/06/2023"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Veículo: HWT-0858"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+            </ChargeDetail>
             <Button content="Carregar" variant="charge" />
-          </SavedStationItem>
-          <SavedStationItem>
+          </ChargesStationItem>
+          <ChargesStationItem>
             <Text
               content="Shopping Pátio Higienópolis"
               color="gray_200"
@@ -96,17 +153,30 @@ export default function Charges() {
               size="xsmall"
               weight="semiBold"
             />
-            <Text
-              content="13.8 km de distância"
-              color="black"
-              size="xxsmall"
-              weight="semiBold"
-            />
-
+            <ChargeDetail>
+              <Text
+                content="Duração: 1 hora e 30 minutos"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Data: 10/06/2023"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+              <Text
+                content="Veículo: HWT-0858"
+                color="black"
+                size="xxxsmall"
+                weight="semiBold"
+              />
+            </ChargeDetail>
             <Button content="Carregar" variant="charge" full={true} />
-          </SavedStationItem>
-        </SavedStationList>
-      </SavedContainer>
+          </ChargesStationItem>
+        </ChargesStationList>
+      </ChargesContainer>
     </DefaultLayout>
   )
 }
