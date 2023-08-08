@@ -1,6 +1,28 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import * as Dialog from '@radix-ui/react-dialog'
+
+const slideUp = keyframes`
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
+
+const slideDown = keyframes`
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+`
 
 export const Trigger = styled(Dialog.Trigger)`
   display: flex;
@@ -20,6 +42,14 @@ export const Content = styled(Dialog.Content)`
     max-height: 100%;
     border-radius: 10px 18px 0px 0px;
     padding: 0px 2rem;
+    transform: translateY(100%);
+    opacity: 0;
+    &[data-state='open'] {
+      animation: ${slideUp} 0.3s ease forwards;
+    }
+    &[data-state='closed'] {
+      animation: ${slideDown} 0.3s ease forwards;
+    }
   `}
 `
 
@@ -34,6 +64,11 @@ export const Overlay = styled(Dialog.Overlay)`
   background-color: #00000052;
   position: fixed;
   inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  &[data-state='open'] {
+    opacity: 1;
+  }
 `
 
 export const Indicator = styled('div')`
