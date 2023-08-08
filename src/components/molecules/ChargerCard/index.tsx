@@ -10,7 +10,7 @@ import {
   ChargerStatusIndicator,
 } from './styles'
 
-import plugA from '@assets/plug-1.png'
+import plugA from '@assets/plug-1.svg'
 import { CaretRight } from '@phosphor-icons/react'
 
 interface ChargerCardProps {

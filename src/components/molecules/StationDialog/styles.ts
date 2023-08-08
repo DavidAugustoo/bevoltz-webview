@@ -38,7 +38,7 @@ export const Content = styled(Dialog.Content)`
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 50vh;
+    height: 57vh;
     max-height: 100%;
     border-radius: 10px 18px 0px 0px;
     padding: 0px 2rem;
@@ -114,7 +114,7 @@ export const ChargesContainer = styled('div')`
     flex-direction: column;
     align-items: center;
     padding: 2rem 0px;
-    border-top: 2px solid ${theme.colors.gray_80};
+    border-top: 1px solid ${theme.colors.gray_80};
     gap: 20px;
   `}
 `

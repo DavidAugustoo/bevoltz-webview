@@ -81,8 +81,9 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
               <Text
                 content="Selecione o conector"
                 color="gray_80"
-                size="small"
+                size="xsmall"
               />
+              <ChargerCard charger={station.chargers} />
               <ChargerCard charger={station.chargers} />
             </ChargesContainer>
           </Dialog.Description>
