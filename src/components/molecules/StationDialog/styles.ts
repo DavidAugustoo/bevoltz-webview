@@ -82,12 +82,39 @@ export const Indicator = styled('div')`
     margin-top: 1.625rem;
   `}
 `
+
 export const Title = styled('div')`
   display: flex;
   justify-content: center;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+`
+
+export const TitleStationArea = styled('div')`
+  display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: space-between;
   gap: 6px;
+`
+
+export const StationSaveArea = styled('div')``
+
+export const InfoStationContainer = styled('div')`
+  padding: 2rem 0px;
+`
+
+export const ChargesContainer = styled('div')`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0px;
+    border-top: 2px solid ${theme.colors.gray_80};
+    gap: 20px;
+  `}
 `

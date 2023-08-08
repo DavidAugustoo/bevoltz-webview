@@ -47,6 +47,7 @@ const defaultTheme = {
 
     gray_30: '#f5f7f6',
     gray_50: '#EEEFF0',
+    gray_80: '#d9d9d9',
     gray_100: '#9B9B9B',
     gray_200: '#626262',
     gray_300: '#494949',

@@ -2,10 +2,24 @@ import { useState } from 'react'
 
 import { IStation } from '@shared/types/station'
 
+import { Button } from '@components/atoms/Button'
 import { Heading } from '@components/atoms/Heading'
+import { Text } from '@components/atoms/Text'
 
-import { Content, Indicator, Overlay, Title, Trigger } from './styles'
+import { ChargerCard } from '../ChargerCard'
+import {
+  ChargesContainer,
+  Content,
+  Indicator,
+  InfoStationContainer,
+  Overlay,
+  StationSaveArea,
+  Title,
+  TitleStationArea,
+  Trigger,
+} from './styles'
 
+import { Heart } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { MarkerF } from '@react-google-maps/api'
 
@@ -36,24 +50,41 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
           <Dialog.Description>
             <Indicator></Indicator>
             <Title>
-              <Heading
-                level={2}
-                content={station.name}
-                size="medium"
-                color="black"
-                weight="bold"
-              />
+              <TitleStationArea>
+                <Heading
+                  level={2}
+                  content={station.name}
+                  size="medium"
+                  color="black"
+                  weight="bold"
+                />
 
-              <Heading
-                level={2}
-                content={`${station.address.street}, ${station.address.number}`}
-                size="xsmall"
-                color="gray_200"
-                weight="semiBold"
-              />
+                <Heading
+                  level={2}
+                  content={`${station.address.street}, ${station.address.number}`}
+                  size="xsmall"
+                  color="gray_200"
+                  weight="semiBold"
+                />
+              </TitleStationArea>
+
+              <StationSaveArea>
+                <Heart size={32} />
+              </StationSaveArea>
             </Title>
 
-            <p>oi</p>
+            <InfoStationContainer>
+              <Button content="Traçar Rota" variant="charge" />
+            </InfoStationContainer>
+
+            <ChargesContainer>
+              <Text
+                content="Selecione o conector"
+                color="gray_80"
+                size="small"
+              />
+              <ChargerCard charger={station.chargers} />
+            </ChargesContainer>
           </Dialog.Description>
         </Content>
       </Dialog.Portal>
