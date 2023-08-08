@@ -50,6 +50,7 @@ const defaultTheme = {
     gray_100: '#9B9B9B',
     gray_200: '#626262',
     gray_300: '#494949',
+    gray_400: '#515151',
   },
   spacings: {
     xxxsmall: '0.8rem',

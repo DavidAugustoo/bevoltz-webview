@@ -1,60 +1,16 @@
+import { stations } from '@shared/constants/stations'
+import { IStation } from '@shared/types/station'
+
+import { MarkerStationDialog } from '@components/molecules/StationDialog'
+
 import markerDark from '@assets/marker-dark.png'
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api'
-
-interface IStation {
-  title: string
-  cords: {
-    lat: number
-    lng: number
-  }
-  type: 'fast' | 'normal'
-}
 
 export function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyDWPV4cI1tyKN6aznnGzzkP_6EJqNgGE6M',
   })
-
-  const stations: IStation[] = [
-    {
-      title: 'Station 1',
-      cords: {
-        lat: -23.575328,
-        lng: -46.622491,
-      },
-      type: 'fast',
-    },
-    {
-      title: 'Station 2',
-      cords: {
-        lat: -23.57217,
-        lng: -46.624176,
-      },
-      type: 'fast',
-    },
-    {
-      title: 'Station 3',
-      cords: {
-        lat: -23.576979,
-        lng: -46.624114,
-      },
-      type: 'fast',
-    },
-    {
-      title: 'Station 4',
-      cords: {
-        lat: -23.571991,
-        lng: -46.621494,
-      },
-      type: 'fast',
-    },
-  ]
-
-  const stationTypes = {
-    fast: 'https://i.ibb.co/txykmBd/marker-dark.png',
-    normal: 'https://i.ibb.co/tY4Y30C/marker-light.png',
-  }
 
   return (
     <>
@@ -82,10 +38,8 @@ export function Map() {
             }}
           />
 
-          {stations.map(({ cords, title, type }) => {
-            return (
-              <MarkerF key={title} position={cords} icon={stationTypes[type]} />
-            )
+          {stations.map((station, index) => {
+            return <MarkerStationDialog key={index} station={station} />
           })}
         </GoogleMap>
       ) : (
