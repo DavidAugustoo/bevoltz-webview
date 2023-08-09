@@ -3,10 +3,12 @@ import { useState } from 'react'
 import { ICharger, IStation } from '@shared/types/station'
 
 import { Heading } from '@components/atoms/Heading'
+import { Input } from '@components/atoms/Input'
 
 import { ChargerCard } from '../ChargerCard'
 import {
   BookingDialogTrigger,
+  BookingForm,
   Close,
   Content,
   Indicator,
@@ -52,6 +54,10 @@ export function BookingDialog({ charger }: ChargerCardProps) {
                 </Close>
               </TitleStationArea>
             </Title>
+
+            <BookingForm>
+              <Input />
+            </BookingForm>
           </Dialog.Description>
         </Content>
       </Dialog.Portal>

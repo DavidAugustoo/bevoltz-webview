@@ -56,6 +56,11 @@ export const Content = styled(Dialog.Content)`
   `}
 `
 
+export const BookingForm = styled('div')`
+  width: 100%;
+  padding-top: 5rem;
+`
+
 export const Close = styled(Dialog.Close)`
   width: 35px;
   height: 35px;

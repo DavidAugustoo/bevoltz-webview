@@ -1,27 +1,16 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const SelectInputContainer = styled('div')`
+export const InputContainer = styled('div')`
   display: flex;
   flex-direction: column;
-  gap: 5px;
-`
+  gap: 2px;
 
-export const SelectInputLabel = styled('label')`
-  ${({ theme }) => css`
-    color: red;
-  `}
-`
-
-export const Select = styled('select')`
-  ${({ theme }) => css`
-    background-color: red;
-    width: 258px;
-    height: 42px;
-    border-radius: ${theme.border.radius.small};
-    border: none;
-    padding: 0px 10px;
-    background-color: ${theme.colors.gray_30};
-
-    color: ${theme.colors.gray_100};
-  `}
+  > input {
+    padding: 14px 0.875rem;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border: 0px;
+    color: #9b9b9b;
+  }
 `
