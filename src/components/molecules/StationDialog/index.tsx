@@ -6,6 +6,7 @@ import { Button } from '@components/atoms/Button'
 import { Heading } from '@components/atoms/Heading'
 import { Text } from '@components/atoms/Text'
 
+import { BookingDialog } from '../BookingDialog'
 import { ChargerCard } from '../ChargerCard'
 import {
   ChargesContainer,
@@ -83,8 +84,8 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
                 color="gray_80"
                 size="xsmall"
               />
-              <ChargerCard charger={station.chargers} />
-              <ChargerCard charger={station.chargers} />
+              <BookingDialog charger={station.chargers} />
+              <BookingDialog charger={station.chargers} />
             </ChargesContainer>
           </Dialog.Description>
         </Content>
