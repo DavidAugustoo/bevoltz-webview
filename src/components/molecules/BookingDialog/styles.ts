@@ -44,8 +44,7 @@ export const Content = styled(Dialog.Content)`
     width: 100vw;
     height: 100vh;
     max-height: 100%;
-    border-radius: 10px 18px 0px 0px;
-    padding: 0px 2rem;
+    padding: 5rem 3rem;
     transform: translateY(100%);
     opacity: 0;
     &[data-state='open'] {
@@ -58,10 +57,14 @@ export const Content = styled(Dialog.Content)`
 `
 
 export const Close = styled(Dialog.Close)`
+  width: 35px;
+  height: 35px;
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
-  all: unset;
+  border: none;
+  border-radius: 5px;
 `
 
 export const Overlay = styled(Dialog.Overlay)`
@@ -100,7 +103,9 @@ export const Title = styled('div')`
 
 export const TitleStationArea = styled('div')`
   display: flex;
-  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  flex-direction: row;
   align-items: start;
   justify-content: space-between;
   gap: 6px;

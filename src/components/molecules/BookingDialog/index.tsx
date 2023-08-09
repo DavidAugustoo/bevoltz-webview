@@ -7,6 +7,7 @@ import { Heading } from '@components/atoms/Heading'
 import { ChargerCard } from '../ChargerCard'
 import {
   BookingDialogTrigger,
+  Close,
   Content,
   Indicator,
   Overlay,
@@ -15,6 +16,7 @@ import {
   Trigger,
 } from './styles'
 
+import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 
 interface ChargerCardProps {
@@ -39,19 +41,15 @@ export function BookingDialog({ charger }: ChargerCardProps) {
               <TitleStationArea>
                 <Heading
                   level={2}
-                  content={'oi'}
+                  content={'Reservar o conector'}
                   size="medium"
                   color="black"
-                  weight="bold"
+                  weight="medium"
                 />
 
-                <Heading
-                  level={2}
-                  content={'oi'}
-                  size="xsmall"
-                  color="gray_200"
-                  weight="semiBold"
-                />
+                <Close>
+                  <X size={22} color="#61E4A3" />
+                </Close>
               </TitleStationArea>
             </Title>
           </Dialog.Description>
