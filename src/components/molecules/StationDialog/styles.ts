@@ -38,7 +38,7 @@ export const Content = styled(Dialog.Content)`
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 57vh;
+    height: 65vh;
     max-height: 100%;
     border-radius: 10px 18px 0px 0px;
     padding: 0px 2rem;
