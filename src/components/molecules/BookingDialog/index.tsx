@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { ICharger, IStation } from '@shared/types/station'
 
+import { DateInput } from '@components/atoms/DateInput'
 import { Heading } from '@components/atoms/Heading'
 import { Input } from '@components/atoms/Input'
 
@@ -56,7 +57,7 @@ export function BookingDialog({ charger }: ChargerCardProps) {
             </Title>
 
             <BookingForm>
-              <Input />
+              <DateInput />
             </BookingForm>
           </Dialog.Description>
         </Content>
