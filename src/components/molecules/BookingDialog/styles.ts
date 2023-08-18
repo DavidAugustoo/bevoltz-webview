@@ -59,6 +59,15 @@ export const Content = styled(Dialog.Content)`
 export const BookingForm = styled('div')`
   width: 100%;
   padding-top: 5rem;
+
+  > input {
+    padding: 14px 0.875rem;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border: 0px;
+    color: #9b9b9b;
+  }
 `
 
 export const Close = styled(Dialog.Close)`

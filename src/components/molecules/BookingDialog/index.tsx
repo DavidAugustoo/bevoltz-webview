@@ -58,6 +58,7 @@ export function BookingDialog({ charger }: ChargerCardProps) {
 
             <BookingForm>
               <DateInput />
+              <input type="time" />
             </BookingForm>
           </Dialog.Description>
         </Content>
