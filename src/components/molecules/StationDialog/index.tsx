@@ -84,8 +84,16 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
                 color="gray_80"
                 size="xsmall"
               />
-              <BookingDialog charger={station.chargers} />
-              <BookingDialog charger={station.chargers} />
+
+              {station.chargers.map((charger, index) => {
+                return (
+                  <BookingDialog
+                    key={index}
+                    charger={charger}
+                    station={station}
+                  />
+                )
+              })}
             </ChargesContainer>
           </Dialog.Description>
         </Content>

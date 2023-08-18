@@ -57,8 +57,11 @@ export const Content = styled(Dialog.Content)`
 `
 
 export const BookingForm = styled('div')`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-top: 5rem;
+  gap: 3rem;
 
   > input {
     padding: 14px 0.875rem;
@@ -129,4 +132,9 @@ export const StationSaveArea = styled('div')``
 
 export const InfoStationContainer = styled('div')`
   padding: 2rem 0px;
+`
+
+export const BookingFormTime = styled('div')`
+  display: flex;
+  gap: 1.25rem;
 `

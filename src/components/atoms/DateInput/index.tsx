@@ -21,19 +21,24 @@ const CustomInput = forwardRef(({ value, onClick }: any, ref: any) => {
   const formattedDate = formatDateAsString(value)
 
   return (
-    <CustomDataPickerButton
-      className="custom-date-input"
-      onClick={onClick}
-      ref={ref}
-    >
-      <Text
-        content={formattedDate}
-        color="gray_100"
-        size="xxsmall"
-        weight="light"
-      />
-      <CalendarBlank size={22} color="#515151" />
-    </CustomDataPickerButton>
+    <>
+      <label htmlFor="">
+        <Text content="Data" color="black" size="xxsmall" weight="regular" />
+      </label>
+      <CustomDataPickerButton
+        className="custom-date-input"
+        onClick={onClick}
+        ref={ref}
+      >
+        <Text
+          content={formattedDate}
+          color="gray_100"
+          size="xxsmall"
+          weight="light"
+        />
+        <CalendarBlank size={17} color="#515151" />
+      </CustomDataPickerButton>
+    </>
   )
 })
 

@@ -14,7 +14,7 @@ import plugA from '@assets/plug-1.svg'
 import { CaretRight } from '@phosphor-icons/react'
 
 interface ChargerCardProps {
-  charger: ICharger[]
+  charger: ICharger
 }
 
 export function ChargerCard({ charger }: ChargerCardProps) {

@@ -1,13 +1,18 @@
 import { Text } from '../Text'
 import { InputContainer } from './styles'
 
-export function Input() {
+export interface InputProps
+  extends React.ButtonHTMLAttributes<HTMLInputElement> {
+  label: string
+}
+
+export function Input({ label, ...rest }: InputProps) {
   return (
     <InputContainer>
       <label htmlFor="">
-        <Text content="Data" color="black" size="xxsmall" weight="regular" />
+        <Text content={label} color="black" size="xxsmall" weight="regular" />
       </label>
-      <input type="date" />
+      <input {...rest} />
     </InputContainer>
   )
 }

@@ -5,11 +5,13 @@ import { ICharger, IStation } from '@shared/types/station'
 import { DateInput } from '@components/atoms/DateInput'
 import { Heading } from '@components/atoms/Heading'
 import { Input } from '@components/atoms/Input'
+import TimePicker from '@components/atoms/TimeInput'
 
 import { ChargerCard } from '../ChargerCard'
 import {
   BookingDialogTrigger,
   BookingForm,
+  BookingFormTime,
   Close,
   Content,
   Indicator,
@@ -23,11 +25,14 @@ import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 
 interface ChargerCardProps {
-  charger: ICharger[]
+  charger: ICharger
+  station: IStation
 }
 
-export function BookingDialog({ charger }: ChargerCardProps) {
+export function BookingDialog({ charger, station }: ChargerCardProps) {
   const [statusModal, setStatusModal] = useState(false)
+
+  const addressFormated = `${station.address.street}, ${station.address.number} - ${station.address.neighborhood} - ${station.address.city}`
 
   return (
     <Dialog.Root open={statusModal} onOpenChange={setStatusModal}>
@@ -58,7 +63,13 @@ export function BookingDialog({ charger }: ChargerCardProps) {
 
             <BookingForm>
               <DateInput />
-              <input type="time" />
+
+              <BookingFormTime>
+                <TimePicker />
+                <TimePicker />
+              </BookingFormTime>
+
+              <Input label="Local" disabled value={addressFormated} />
             </BookingForm>
           </Dialog.Description>
         </Content>
