@@ -23,7 +23,7 @@ export const ButtonContainer = styled('button')<ButtonProps>`
     align-items: center;
     gap: 10px;
 
-    max-width: 310px;
+    /* max-width: 310px; */
     min-width: 130px;
     padding: 12px 16px;
     border: none;
@@ -60,6 +60,20 @@ export const ButtonContainer = styled('button')<ButtonProps>`
     css`
       background-color: ${theme.colors.green_100};
       padding: 8px 12px;
+
+      ${IconContainer}, p {
+        color: ${theme.colors.white};
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    `}
+
+    ${variant == 'booking' &&
+    css`
+      background-color: ${theme.colors.green_100};
+      padding: 12px 0px;
 
       ${IconContainer}, p {
         color: ${theme.colors.white};

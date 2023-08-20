@@ -2,15 +2,19 @@ import { useState } from 'react'
 
 import { ICharger, IStation } from '@shared/types/station'
 
+import { Button } from '@components/atoms/Button'
 import { DateInput } from '@components/atoms/DateInput'
 import { Heading } from '@components/atoms/Heading'
 import { Input } from '@components/atoms/Input'
+import { Text } from '@components/atoms/Text'
 import TimePicker from '@components/atoms/TimeInput'
 
 import { ChargerCard } from '../ChargerCard'
 import {
+  BookingButtonArea,
   BookingDialogTrigger,
   BookingForm,
+  BookingFormPrice,
   BookingFormTime,
   Close,
   Content,
@@ -70,7 +74,29 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
               </BookingFormTime>
 
               <Input label="Local" disabled value={addressFormated} />
+
+              <BookingFormPrice>
+                <Input label="Preço" disabled value={'R$19.90'} />
+                <Input label="Plug" disabled value={charger.plugType} />
+              </BookingFormPrice>
             </BookingForm>
+
+            <BookingButtonArea>
+              <Text
+                content="Li e concordo com os termos da Política de Uso"
+                color="black"
+                weight="regular"
+                size="xxxsmall"
+              />
+              <Button content="Reservar" variant="booking" full={true} />
+              <Text
+                content="A reserva é gratuita, e o conector ficará disponível para você por mais 15 minutos após o horário informado em casos de atraso"
+                color="gray_100"
+                align="center"
+                weight="light"
+                size="xxxsmall"
+              />
+            </BookingButtonArea>
           </Dialog.Description>
         </Content>
       </Dialog.Portal>

@@ -8,7 +8,7 @@ import rayIcon from '@assets/ray-bevoltz.svg'
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   content: string
-  variant: 'primary' | 'secondary' | 'charge'
+  variant: 'primary' | 'secondary' | 'charge' | 'booking'
   full?: boolean
   icon?: React.ReactElement<any, string | React.JSXElementConstructor<any>>
   charge?: boolean

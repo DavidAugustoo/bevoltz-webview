@@ -138,3 +138,19 @@ export const BookingFormTime = styled('div')`
   display: flex;
   gap: 1.25rem;
 `
+
+export const BookingFormPrice = styled('div')`
+  display: flex;
+  gap: 1.25rem;
+`
+
+export const BookingButtonArea = styled('div')`
+  display: flex;
+  max-width: 84vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  position: absolute;
+  bottom: 60px;
+`
