@@ -73,6 +73,8 @@ export const BookingForm = styled('div')`
   }
 `
 
+export const BookingFormArea = styled('form')``
+
 export const Close = styled(Dialog.Close)`
   width: 35px;
   height: 35px;

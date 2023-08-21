@@ -12,8 +12,6 @@ import { ptBR } from 'date-fns/locale'
 
 const CustomInput = forwardRef(({ value, onClick }: any, ref: any) => {
   const formatDateAsString = (dateString: string) => {
-    console.log(dateString)
-
     const date = parse(dateString, 'MM/dd/yyyy', new Date())
     return format(date, "dd 'de' MMMM, yyyy", { locale: ptBR })
   }
