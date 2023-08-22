@@ -52,6 +52,9 @@ const defaultTheme = {
     gray_200: '#626262',
     gray_300: '#494949',
     gray_400: '#515151',
+
+    yellow_200: '#E4DF61',
+    red_200: '#E46161',
   },
   spacings: {
     xxxsmall: '0.8rem',

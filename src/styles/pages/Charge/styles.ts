@@ -23,7 +23,7 @@ export const ChargesStationItem = styled('div')`
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 
     button {
       margin-top: 10px;
@@ -40,6 +40,9 @@ export const ChargeDetail = styled('div')`
 
 export const ChargeValueBox = styled('div')`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
 `
 
 export const ChargeValueArea = styled('div')`

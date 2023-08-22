@@ -1,4 +1,5 @@
 import { Button } from '@components/atoms/Button'
+import { StatusTag } from '@components/atoms/StatusTag'
 import { Text } from '@components/atoms/Text'
 
 import {
