@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 
@@ -63,6 +64,8 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
   const { watch, handleSubmit, control } = useForm({
     resolver: yupResolver(schema),
   })
+  const router = useRouter()
+
   const { saveReservation } = useReservationContext()
 
   const addressFormated = `${station.address.street}, ${station.address.number} - ${station.address.neighborhood} - ${station.address.city}`
@@ -114,6 +117,7 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
                   station,
                 }
                 saveReservation(reservation)
+                router.push('/charges')
               })}
             >
               <Title>
