@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 
 import { ICharger, IStation } from '@shared/types/station'
@@ -29,6 +29,7 @@ import {
 import { yupResolver } from '@hookform/resolvers/yup'
 import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
+import { ReservationContext } from 'src/contexts/reservationsContext'
 import * as yup from 'yup'
 
 interface ChargerCardProps {
@@ -47,11 +48,23 @@ const schema = yup.object().shape({
     .matches(/^\d{1}h [0-5][0-9]m$/, 'Duração inválida'),
 })
 
+function useReservationContext() {
+  const context = useContext(ReservationContext)
+  if (!context) {
+    throw new Error(
+      'useReservationContext deve ser usado dentro de um ReservationProvider',
+    )
+  }
+  return context
+}
+
 export function BookingDialog({ charger, station }: ChargerCardProps) {
   const [statusModal, setStatusModal] = useState(false)
   const { watch, handleSubmit, control } = useForm({
     resolver: yupResolver(schema),
   })
+  const { saveReservation } = useReservationContext()
+
   const addressFormated = `${station.address.street}, ${station.address.number} - ${station.address.neighborhood} - ${station.address.city}`
 
   const watchedHorario = watch('duracao', '')
@@ -92,7 +105,16 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
         <Content>
           <Dialog.Description>
             <BookingFormArea
-              onSubmit={handleSubmit((data) => console.log(data))}
+              onSubmit={handleSubmit((data) => {
+                const reservation = {
+                  ...data,
+                  price,
+                  status: 'Scheduled',
+                  charger,
+                  station,
+                }
+                saveReservation(reservation)
+              })}
             >
               <Title>
                 <TitleStationArea>
