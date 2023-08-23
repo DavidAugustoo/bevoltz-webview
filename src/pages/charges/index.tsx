@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { Button } from '@components/atoms/Button'
 import { StatusTag } from '@components/atoms/StatusTag'
 import { Text } from '@components/atoms/Text'
+import { BookingCard } from '@components/molecules/BookingCard'
+import { ConfirmBookingChargeDialog } from '@components/organisms/ConfirmBookingChargeDialog'
 
 import {
   ChargeDetail,
@@ -33,58 +35,9 @@ export default function Charges() {
         />
 
         <ChargesStationList>
-          {reservations.map(
-            ({ charger, station, duracao, horario, price, status }, index) => {
-              return (
-                <ChargesStationItem key={index}>
-                  <Text
-                    content={station.name}
-                    color="gray_400"
-                    size="medium"
-                    weight="semiBold"
-                  />
-                  <Text
-                    content={station.address.street}
-                    color="gray_100"
-                    size="xsmall"
-                    weight="medium"
-                  />
-                  <ChargeDetail>
-                    <Text
-                      content="Data: 08 de Agosto, 2023"
-                      color="black"
-                      size="xxxsmall"
-                      weight="semiBold"
-                    />
-                    <Text
-                      content={`Duração: ${duracao}`}
-                      color="black"
-                      size="xxxsmall"
-                      weight="semiBold"
-                    />
-                    <Text
-                      content={`Horário: ${horario} PM`}
-                      color="black"
-                      size="xxxsmall"
-                      weight="semiBold"
-                    />
-                  </ChargeDetail>
-
-                  <ChargeValueBox>
-                    <StatusTag variant={status as 'Scheduled'} />
-                    <ChargeValueArea>
-                      <Text
-                        content={price}
-                        color="black"
-                        size="small"
-                        weight="bold"
-                      />
-                    </ChargeValueArea>
-                  </ChargeValueBox>
-                </ChargesStationItem>
-              )
-            },
-          )}
+          {reservations.map((data, index) => {
+            return <ConfirmBookingChargeDialog data={data} key={index} />
+          })}
         </ChargesStationList>
       </ChargesContainer>
     </DefaultLayout>

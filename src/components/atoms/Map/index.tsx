@@ -1,7 +1,7 @@
 import { stations } from '@shared/constants/stations'
 import { IStation } from '@shared/types/station'
 
-import { MarkerStationDialog } from '@components/molecules/StationDialog'
+import { MarkerStationDialog } from '@components/organisms/StationDialog'
 
 import markerDark from '@assets/marker-dark.png'
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api'

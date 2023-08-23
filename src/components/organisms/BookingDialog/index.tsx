@@ -10,7 +10,7 @@ import { Heading } from '@components/atoms/Heading'
 import { Input } from '@components/atoms/Input'
 import { Text } from '@components/atoms/Text'
 
-import { ChargerCard } from '../ChargerCard'
+import { ChargerCard } from '../../molecules/ChargerCard'
 import {
   BookingButtonArea,
   BookingDialogTrigger,

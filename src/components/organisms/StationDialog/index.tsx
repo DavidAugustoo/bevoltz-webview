@@ -7,7 +7,7 @@ import { Heading } from '@components/atoms/Heading'
 import { Text } from '@components/atoms/Text'
 
 import { BookingDialog } from '../BookingDialog'
-import { ChargerCard } from '../ChargerCard'
+import { ChargerCard } from '../../molecules/ChargerCard'
 import {
   ChargesContainer,
   Content,

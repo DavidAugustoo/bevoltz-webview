@@ -42,7 +42,11 @@ const CustomInput = forwardRef(({ value, onClick }: any, ref: any) => {
 
 CustomInput.displayName = 'CustomInput'
 
-export function DateInput() {
+interface DataInput {
+  disabled?: boolean
+}
+
+export function DateInput({ disabled = false }: DataInput) {
   const [startDate, setStartDate] = useState(new Date())
 
   return (
@@ -52,6 +56,7 @@ export function DateInput() {
         selected={startDate}
         onChange={(date) => setStartDate(date as Date)}
         popperPlacement="auto"
+        disabled={disabled}
       />
     </DataPickerContainer>
   )
