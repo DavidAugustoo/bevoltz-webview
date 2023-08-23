@@ -23,6 +23,7 @@ import {
   Trigger,
 } from './styles'
 
+import { Wallet } from '@mercadopago/sdk-react'
 import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -52,7 +53,7 @@ export function ConfirmBookingChargeDialog({
         <Overlay />
         <Content>
           <Dialog.Description>
-            <BookingFormArea onSubmit={() => handleSubmit()}>
+            <BookingFormArea>
               <Title>
                 <TitleStationArea>
                   <Heading
@@ -103,6 +104,12 @@ export function ConfirmBookingChargeDialog({
                   variant="booking"
                   full={true}
                   type="submit"
+                />
+                <Wallet
+                  initialization={{
+                    preferenceId:
+                      '1457798436-3d10394f-3f34-477b-a17c-f0b408482693',
+                  }}
                 />
               </BookingButtonArea>
             </BookingFormArea>

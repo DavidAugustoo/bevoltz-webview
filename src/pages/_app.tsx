@@ -1,6 +1,7 @@
 import { Figtree } from '@next/font/google'
 import { SessionProvider } from 'next-auth/react'
 import type { AppProps } from 'next/app'
+import { useEffect } from 'react'
 
 import { ThemeProvider } from 'styled-components'
 
@@ -14,6 +15,12 @@ const figtree = Figtree({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    import('@mercadopago/sdk-react').then((mp) => {
+      mp.initMercadoPago('APP_USR-a5c4cee8-680c-4eff-aa3f-eba4566fba6c')
+    })
+  }, [])
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <SessionProvider session={pageProps.session}>
