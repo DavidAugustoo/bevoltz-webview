@@ -38,10 +38,6 @@ export function ConfirmBookingChargeDialog({
 
   const addressFormated = `${data.station.address.street}, ${data.station.address.number} - ${data.station.address.neighborhood} - ${data.station.address.city}`
 
-  function handleSubmit() {
-    alert('Pago')
-  }
-
   return (
     <Dialog.Root open={statusModal} onOpenChange={setStatusModal}>
       <Trigger asChild>
@@ -99,13 +95,8 @@ export function ConfirmBookingChargeDialog({
               </BookingForm>
 
               <BookingButtonArea>
-                <Button
-                  content="Efetuar Pagamento"
-                  variant="booking"
-                  full={true}
-                  type="submit"
-                />
                 <Wallet
+                  locale="pt-BR"
                   initialization={{
                     preferenceId:
                       '1457798436-3d10394f-3f34-477b-a17c-f0b408482693',

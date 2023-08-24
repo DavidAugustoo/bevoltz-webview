@@ -39,7 +39,7 @@ export function ChargerCard({ charger }: ChargerCardProps) {
 
       <ChargerStatus>
         <ChargerStatusIndicator></ChargerStatusIndicator>
-        <Text content="Não Disponível" color="gray_400" size="xxxsmall" />
+        <Text content="Disponível" color="gray_400" size="xxxsmall" />
       </ChargerStatus>
 
       <CaretRight size={26} />

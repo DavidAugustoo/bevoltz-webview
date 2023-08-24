@@ -51,7 +51,7 @@ export function BookingCard({ data }: BookingCardProps) {
       </ChargeDetail>
 
       <ChargeValueBox>
-        <StatusTag variant={data.status as 'Scheduled'} />
+        <StatusTag variant={data.status as 'Available'} />
         <ChargeValueArea>
           <Text content={data.price} color="black" size="small" weight="bold" />
         </ChargeValueArea>

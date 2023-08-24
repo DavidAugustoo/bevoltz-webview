@@ -112,7 +112,7 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
                 const reservation = {
                   ...data,
                   price,
-                  status: 'Scheduled',
+                  status: 'Available',
                   charger,
                   station,
                 }

@@ -42,5 +42,5 @@ export const ChargerStatusIndicator = styled('div')`
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: red;
+  background-color: green;
 `
