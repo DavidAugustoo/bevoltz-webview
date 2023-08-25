@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 
 import { Button } from '@components/atoms/Button'
 import { StatusTag } from '@components/atoms/StatusTag'
@@ -17,15 +19,42 @@ import {
 import { useReservations } from 'src/hooks/useReservation'
 import { DefaultLayout } from 'src/Layout/DefaultLayout'
 
+4
+
 export default function Charges() {
   const { reservations } = useReservations()
 
-  useEffect(() => {
-    console.log(reservations)
-  }, [reservations])
+  const router = useRouter()
+
+  const { bookingSuccess } = router.query
+
+  if (bookingSuccess == 'true') {
+    toast('Recarga realizada!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    })
+  }
 
   return (
     <DefaultLayout>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <ChargesContainer className="container-content">
         <Text
           content="Recargas Realizadas"

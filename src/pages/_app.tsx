@@ -10,6 +10,7 @@ import { initMercadoPago } from '@mercadopago/sdk-react'
 import GlobalStyles from '@styles/global'
 import defaultTheme from '@styles/theme'
 import { ReservationProvider } from 'src/contexts/reservationsContext'
+import 'react-toastify/dist/ReactToastify.css'
 
 const figtree = Figtree({
   subsets: ['latin'],
