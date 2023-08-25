@@ -99,7 +99,7 @@ export function ConfirmBookingChargeDialog({
                   locale="pt-BR"
                   initialization={{
                     preferenceId:
-                      '1457798436-3d10394f-3f34-477b-a17c-f0b408482693',
+                      '1457798436-52abfd59-a1f3-46b6-86b6-ad42beb24604',
                   }}
                 />
               </BookingButtonArea>
