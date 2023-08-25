@@ -7,7 +7,6 @@ import { Map } from '@components/atoms/Map'
 
 import { HomeContainer } from '@styles/pages/Home/styles'
 import { DefaultLayout } from 'src/Layout/DefaultLayout'
-import 'react-toastify/dist/ReactToastify.css'
 
 export default function Home() {
   const router = useRouter()
@@ -15,7 +14,7 @@ export default function Home() {
   const { chargeSuccess } = router.query
 
   if (chargeSuccess == 'true') {
-    toast('Recarga concluída!', {
+    toast('⚡Recarga concluída!', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,
@@ -23,7 +22,7 @@ export default function Home() {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'light',
+      theme: 'dark',
     })
   }
 

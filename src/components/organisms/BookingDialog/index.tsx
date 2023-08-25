@@ -117,7 +117,10 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
                   station,
                 }
                 saveReservation(reservation)
-                router.push('/charges')
+                router.push({
+                  pathname: '/charges',
+                  query: { bookingSuccess: true },
+                })
               })}
             >
               <Title>
