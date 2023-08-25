@@ -26,8 +26,8 @@ export default function handler(
       },
     ],
     back_urls: {
-      success: 'http://localhost:3000/success',
-      failure: 'http://localhost:3000/failure',
+      success: 'https://bevoltz-webview.vercel.app/success',
+      failure: 'https://bevoltz-webview.vercel.app/failure',
       pending: 'http://www.seu-site/pending',
     },
     auto_return: 'approved' as 'approved',
