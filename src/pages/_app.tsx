@@ -1,10 +1,12 @@
 import { Figtree } from '@next/font/google'
 import { SessionProvider } from 'next-auth/react'
 import type { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 
 import { ThemeProvider } from 'styled-components'
 
+import { initMercadoPago } from '@mercadopago/sdk-react'
 import GlobalStyles from '@styles/global'
 import defaultTheme from '@styles/theme'
 import { ReservationProvider } from 'src/contexts/reservationsContext'
@@ -14,17 +16,19 @@ const figtree = Figtree({
   weight: ['300', '400', '500', '600', '700'],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    import('@mercadopago/sdk-react').then((mp) => {
-      mp.initMercadoPago('APP_USR-a5c4cee8-680c-4eff-aa3f-eba4566fba6c')
-    })
-  }, [])
+const DynamicInitMercadoPago = dynamic(
+  () => import('../services/mercadoPago'),
+  {
+    ssr: false,
+  },
+)
 
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
       <SessionProvider session={pageProps.session}>
         <ReservationProvider>
+          <DynamicInitMercadoPago />
           <main className={figtree.className}>
             <Component {...pageProps} />
           </main>

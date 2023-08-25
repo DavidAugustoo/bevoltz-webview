@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withTM = require('next-transpile-modules')(['@mercadopago/sdk-react'])
+
+const nextConfig = withTM({
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
@@ -11,6 +14,6 @@ const nextConfig = {
     GOOGLE_CLIENT_SECRET: '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',
     NEXTAUTH_SECRET: 'LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx6gts=',
   },
-}
+})
 
 module.exports = nextConfig
