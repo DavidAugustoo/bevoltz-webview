@@ -18,8 +18,8 @@ export function Map() {
         <GoogleMap
           mapContainerStyle={{ width: '100%', height: '100%' }}
           center={{
-            lat: -23.57415,
-            lng: -46.62309,
+            lat: -23.563907263143754,
+            lng: -46.65239723388512,
           }}
           options={{
             streetViewControl: false, // desabilita o controle Street View
@@ -33,8 +33,8 @@ export function Map() {
         >
           <MarkerF
             position={{
-              lat: -23.57415,
-              lng: -46.62309,
+              lat: -23.564393441420815,
+              lng: -46.65279671438474,
             }}
           />
 
