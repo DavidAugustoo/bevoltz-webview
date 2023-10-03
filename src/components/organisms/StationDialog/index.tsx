@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { IStation } from '@shared/types/station'
 
@@ -6,8 +6,8 @@ import { Button } from '@components/atoms/Button'
 import { Heading } from '@components/atoms/Heading'
 import { Text } from '@components/atoms/Text'
 
-import { BookingDialog } from '../BookingDialog'
 import { ChargerCard } from '../../molecules/ChargerCard'
+import { BookingDialog } from '../BookingDialog'
 import {
   ChargesContainer,
   Content,
@@ -23,6 +23,7 @@ import {
 import { Heart } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { MarkerF } from '@react-google-maps/api'
+import { useStations } from 'src/hooks/useStation'
 
 const stationTypes = {
   fast: 'https://i.ibb.co/txykmBd/marker-dark.png',
@@ -35,6 +36,24 @@ interface MarkerStationDialogProps {
 
 export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
   const [statusModal, setStatusModal] = useState(false)
+  const [isStationSaved, setIsStationSaved] = useState(false)
+  const { stations, saveStation, removeStation } = useStations()
+
+  useEffect(() => {
+    const isStationSavedInLocalStorage = stations.some(
+      (obj) => obj.name === station.name,
+    )
+
+    setIsStationSaved(isStationSavedInLocalStorage)
+  }, [])
+
+  useEffect(() => {
+    if (isStationSaved) {
+      saveStation(station)
+    } else {
+      removeStation(station.name)
+    }
+  }, [isStationSaved])
 
   return (
     <Dialog.Root open={statusModal} onOpenChange={setStatusModal}>
@@ -69,8 +88,14 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
                 />
               </TitleStationArea>
 
-              <StationSaveArea>
-                <Heart size={32} />
+              <StationSaveArea
+                onClick={() => setIsStationSaved(!isStationSaved)}
+              >
+                {isStationSaved ? (
+                  <Heart size={32} color="red" weight="fill" />
+                ) : (
+                  <Heart size={32} />
+                )}
               </StationSaveArea>
             </Title>
 
