@@ -55,6 +55,8 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
     }
   }, [isStationSaved])
 
+  const redirectGPSRoute = `https://www.google.com/maps/dir/?api=1&origin=-23.563907263143754,-46.65239723388512&destination=${station.address.cords.lat},${station.address.cords.lng}&travelmode=driving`
+
   return (
     <Dialog.Root open={statusModal} onOpenChange={setStatusModal}>
       <Trigger asChild>
@@ -100,7 +102,9 @@ export function MarkerStationDialog({ station }: MarkerStationDialogProps) {
             </Title>
 
             <InfoStationContainer>
-              <Button content="Traçar Rota" variant="charge" />
+              <a href={redirectGPSRoute} target="_blank">
+                <Button content="Traçar Rota" variant="charge" />
+              </a>
             </InfoStationContainer>
 
             <ChargesContainer>
