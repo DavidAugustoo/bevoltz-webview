@@ -7,7 +7,6 @@ import {
   CaretRight,
   Info,
   Lifebuoy,
-  PencilSimple,
   Question,
   Scroll,
   SignOut,
