@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { Key } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Button } from '@components/atoms/Button'
 import { Heading } from '@components/atoms/Heading'
@@ -22,52 +22,63 @@ import {
   Title,
   TitleStationArea,
 } from '@styles/pages/Success/styles'
-
-const chargingInfo: any = [
-  {
-    label: 'Preço',
-    value: 'R$19,80',
-  },
-  {
-    label: 'Duração',
-    value: '3h 45m',
-  },
-  {
-    label: 'Plug',
-    value: 'Type 2',
-  },
-]
+import { useReservations } from 'src/hooks/useReservation'
 
 export default function Success() {
   const router = useRouter()
+  const { reservations } = useReservations()
+  const lastReservation = reservations.at(-1)
+
+  const [remainingMinutes, setRemainingMinutes] = useState<number | null>(null)
+
+  useEffect(() => {
+    const convertToMinutes = (duration: string): number => {
+      const [hoursStr, minutesStr] = duration
+        .split(' ')
+        .map((part) => part.match(/\d+/)?.[0] ?? '0')
+      return parseInt(hoursStr, 10) * 60 + parseInt(minutesStr, 10)
+    }
+
+    if (lastReservation?.duracao) {
+      setRemainingMinutes(convertToMinutes(lastReservation.duracao))
+    }
+  }, [lastReservation])
+
+  useEffect(() => {
+    if (remainingMinutes && remainingMinutes > 0) {
+      const timer = setTimeout(() => {
+        setRemainingMinutes((prev) => (prev ? prev - 1 : 0))
+      }, 60000)
+      return () => clearTimeout(timer)
+    }
+  }, [remainingMinutes])
+
+  const formatTime = (minutes: number): string => {
+    const hours = Math.floor(minutes / 60)
+    const remainingMinutes = minutes % 60
+    return `${hours}h ${remainingMinutes}m`
+  }
 
   return (
     <SuccessContainer>
       <Title>
         <TitleStationArea>
-          <Close>
-            <CaretLeft size={22} color="#61E4A3" />
-          </Close>
-
           <Heading
             level={2}
-            content={'Carregando'}
+            content={'Veículo Não Conectado'}
             size="medium"
             color="black"
             weight="medium"
           />
         </TitleStationArea>
       </Title>
-
       <ContentContainer>
         <ChargerImage src={car} alt="" />
-
         <ChargerInfoContainer>
           <ChargerHeader>
             <ChargePercentage>
-              85 <span>%</span>{' '}
+              0 <span>%</span>{' '}
             </ChargePercentage>
-
             <LastContainer>
               <Text
                 content={'Tempo Restante'}
@@ -76,36 +87,61 @@ export default function Success() {
                 weight="bold"
               />
               <Text
-                content={'1 hora e 38 minutos'}
+                content={
+                  remainingMinutes !== null
+                    ? formatTime(remainingMinutes)
+                    : 'Calculando...'
+                }
                 color="gray_400"
                 size="xxsmall"
                 weight="regular"
               />
             </LastContainer>
           </ChargerHeader>
-
           <LineDivider></LineDivider>
-
           <ReservationInfoContainer>
-            {chargingInfo.map((data: any, index: Key | null | undefined) => {
-              console.log(data)
-              return (
-                <ReservationInfo key={index}>
-                  <Text
-                    content={data.value}
-                    color="green_300"
-                    size="xsmall"
-                    weight="bold"
-                  />
-                  <Text
-                    content={data.label}
-                    color="gray_400"
-                    size="xxsmall"
-                    weight="regular"
-                  />
-                </ReservationInfo>
-              )
-            })}
+            <ReservationInfo>
+              <Text
+                content={'Preço'}
+                color="green_300"
+                size="xsmall"
+                weight="bold"
+              />
+              <Text
+                content={lastReservation?.price as string}
+                color="gray_400"
+                size="xxsmall"
+                weight="regular"
+              />
+            </ReservationInfo>
+            <ReservationInfo>
+              <Text
+                content={'Duração'}
+                color="green_300"
+                size="xsmall"
+                weight="bold"
+              />
+              <Text
+                content={lastReservation?.duracao as string}
+                color="gray_400"
+                size="xxsmall"
+                weight="regular"
+              />
+            </ReservationInfo>
+            <ReservationInfo>
+              <Text
+                content={'Plug'}
+                color="green_300"
+                size="xsmall"
+                weight="bold"
+              />
+              <Text
+                content={'Type 2'}
+                color="gray_400"
+                size="xxsmall"
+                weight="regular"
+              />
+            </ReservationInfo>
           </ReservationInfoContainer>
         </ChargerInfoContainer>
         <Button
