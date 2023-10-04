@@ -63,12 +63,9 @@ export default function Success() {
     <SuccessContainer>
       <Title>
         <TitleStationArea>
-          <Close>
-            <CaretLeft size={22} color="#61E4A3" />
-          </Close>
           <Heading
             level={2}
-            content={'Não Conectado'}
+            content={'Veículo Não Conectado'}
             size="medium"
             color="black"
             weight="medium"

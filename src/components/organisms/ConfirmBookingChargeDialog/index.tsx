@@ -24,6 +24,7 @@ import {
 } from './styles'
 
 import { Wallet } from '@mercadopago/sdk-react'
+import CircularProgress from '@mui/material/CircularProgress'
 import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -35,8 +36,13 @@ export function ConfirmBookingChargeDialog({
   data,
 }: ConfirmBookingChargeDialogProps) {
   const [statusModal, setStatusModal] = useState(false)
+  const [isWalletReady, setIsWalletReady] = useState(false)
 
   const addressFormated = `${data.station.address.street}, ${data.station.address.number} - ${data.station.address.neighborhood} - ${data.station.address.city}`
+
+  const handleWalletReady = () => {
+    setIsWalletReady(true)
+  }
 
   return (
     <Dialog.Root open={statusModal} onOpenChange={setStatusModal}>
@@ -96,12 +102,14 @@ export function ConfirmBookingChargeDialog({
 
               <BookingButtonArea>
                 <Wallet
+                  onReady={handleWalletReady}
                   locale="pt-BR"
                   initialization={{
                     preferenceId:
                       '1457798436-52abfd59-a1f3-46b6-86b6-ad42beb24604',
                   }}
                 />
+                {!isWalletReady ? <CircularProgress /> : null}
               </BookingButtonArea>
             </BookingFormArea>
           </Dialog.Description>
