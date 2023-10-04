@@ -106,7 +106,7 @@ export function ConfirmBookingChargeDialog({
                   locale="pt-BR"
                   initialization={{
                     preferenceId:
-                      '1457798436-52abfd59-a1f3-46b6-86b6-ad42beb24604',
+                      '1457798436-d0a95282-6bdb-4130-aa7e-86f4b6ec303b',
                   }}
                 />
                 {!isWalletReady ? <CircularProgress /> : null}
