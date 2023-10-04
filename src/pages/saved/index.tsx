@@ -27,6 +27,8 @@ export default function Saved() {
 
         <SavedStationList>
           {stations.map(({ name, address }, index) => {
+            const redirectGPSRoute = `https://www.google.com/maps/dir/?api=1&origin=-23.563907263143754,-46.65239723388512&destination=${address.cords.lat},${address.cords.lng}&travelmode=driving`
+
             return (
               <SavedStationItem key={index}>
                 <Text
@@ -47,7 +49,9 @@ export default function Saved() {
                   size="xxxsmall"
                   weight="semiBold"
                 />
-                <Button content="Carregar" variant="charge" charge />
+                <a href={redirectGPSRoute} target="_blank">
+                  <Button content="Traçar rota" variant="charge" charge />
+                </a>
               </SavedStationItem>
             )
           })}
