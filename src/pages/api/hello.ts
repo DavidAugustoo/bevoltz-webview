@@ -27,8 +27,8 @@ export default function handler(
     ],
     back_urls: {
       success: 'https://bevoltz-webview.vercel.app/success',
-      failure: 'https://bevoltz-webview.vercel.app/failure',
-      pending: 'http://www.seu-site/pending',
+      failure: 'https://bevoltz-webview.vercel.app/success',
+      pending: 'https://bevoltz-webview.vercel.app/success',
     },
     auto_return: 'approved' as 'approved',
   }

@@ -31,6 +31,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { X } from '@phosphor-icons/react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { ReservationContext } from 'src/contexts/reservationsContext'
+import { useReservations } from 'src/hooks/useReservation'
 import * as yup from 'yup'
 
 interface ChargerCardProps {
@@ -49,16 +50,6 @@ const schema = yup.object().shape({
     .matches(/^\d{1}h [0-5][0-9]m$/, 'Duração inválida'),
 })
 
-function useReservationContext() {
-  const context = useContext(ReservationContext)
-  if (!context) {
-    throw new Error(
-      'useReservationContext deve ser usado dentro de um ReservationProvider',
-    )
-  }
-  return context
-}
-
 export function BookingDialog({ charger, station }: ChargerCardProps) {
   const [statusModal, setStatusModal] = useState(false)
   const { watch, handleSubmit, control } = useForm({
@@ -66,7 +57,7 @@ export function BookingDialog({ charger, station }: ChargerCardProps) {
   })
   const router = useRouter()
 
-  const { saveReservation } = useReservationContext()
+  const { saveReservation } = useReservations()
 
   const addressFormated = `${station.address.street}, ${station.address.number} - ${station.address.neighborhood} - ${station.address.city}`
 

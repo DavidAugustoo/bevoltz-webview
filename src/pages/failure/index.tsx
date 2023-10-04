@@ -1,3 +1,3 @@
 export default function Failure() {
-  return <p>Deu errado carai</p>
+  return <p>Deu errado</p>
 }
