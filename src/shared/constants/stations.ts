@@ -23,7 +23,7 @@ export const stations: IStation[] = [
     phone: '11-33858010',
   },
   {
-    name: 'FIAP - Paulista',
+    name: 'ARCA - EVENTO NEXT',
     address: {
       cep: '01520-001',
       state: 'SP',
@@ -33,8 +33,8 @@ export const stations: IStation[] = [
       number: '1106',
       service: 'Educação',
       cords: {
-        lat: -23.563907263143754,
-        lng: -46.65239723388512,
+        lat: -23.539353961466066,
+        lng: -46.734475446916534,
       },
     },
     chargers: [
